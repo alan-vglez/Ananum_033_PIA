@@ -1,0 +1,25 @@
+Análisis de Regresión de Calidad de Agua en Lagos
+
+Los niveles altos de fósforo en cuerpos de agua provocan lo siguiente: hipoxia (poco oxígeno en cuerpos de agua) 
+y eutrofización (niveles excesivos de nutrientes), dos fenómenos que desencadenan el alto crecimiento de floraciones
+algales, afectando la calidad del agua y del ecosistema.
+
+Variable dependiente:
+- PTL: Nivel total de fósforo en el lago, unidades = mg/L
+
+Variables independientes:
+- NTL: Nivel total de nitrógeno en el lago, unidades = mg/L
+- Tot_Sdep: Depósito total de azufre, unidades = kg/ha
+- OmWs: Materia orgánica dentro de la cuenca, unidades = mg/L
+- AgKffactW: Factor K (coeficiente relacionado con el potencial de erosión del suelo)
+- Depth: Profundidad, unidades = mi
+
+Relación entre Dependiente e Independientes:
+- PTL-NTL: El nitrógeno potencia los efectos del fósforo. Altos niveles de nitrógeno suelen estar correlacionados 
+           con altos niveles de fósforo.
+- PTL-Tot_Sdep: El azufre acidifica el agua. Un pH ácido provoca bajos niveles de fósforo.
+- PTL-OmWs: La materia orgánica actua como filtro en los sedimentos de los lagos. Estos filtros capturan nutrientes,
+            como el fósforo.
+- PTL-AgKffactW: El factor de erosión K representa la susceptibilidad del suelo a ser arrastrado hacia el agua. 
+                 Cuando el suelo erosionado llega al lago, lleva consigo partículas que contienen fósforo.
+- PTL-Depth: Los lagos profundos tienen una mayor capacidad para diluir nutrientes, incluyendo el fósforo.
