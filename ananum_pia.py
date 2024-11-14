@@ -36,15 +36,30 @@ def interpretation(model):
     for coef, pvalue, name in zip(model.params, model.pvalues, model.params.index):
         significance = "significativo" if pvalue < 0.05 else "no significativo"
         if first_iteration: 
-            print(f"Coeficiente para {name}: {coef:.4f}")
+            print(f"\nCoeficiente para {name}: {coef:.4f}")
             if coef < 0: 
                 print("En ausencia de cualquier efecto de las variables independientes, se tendrán niveles de fósforo"
                       " negativos, algo que no es realista.")
-            else: 
+            elif coef > 0: 
                 print(f"En ausencia de cualquier efecto de las variables independientes, se tendrán {coef:.4f} mg/L de fósforo.")
+            else: 
+                print("En ausencia de cualquier efecto de las variables independientes, no se tendrán niveles de fósforo.")
             first_iteration = False
         else:
-            print(f"Coeficiente para {name}: {coef:.4f} ({significance}, p = {pvalue:.4f})")
+            print(f"\nCoeficiente para {name}: {coef:.4f} ({significance}, p = {pvalue:.4f})")
+            print()
+            if pvalue < 0.05:
+                print(f"{name} tiene un impacto significativo en la predicción de los niveles de fósforo.")
+                print(f"Se tiene certeza que {name} tendrá un coeficiente {'positivo' if coef > 0 else 'negativo'}.")
+            else:
+                print(f"{name} no tiene un impacto significativo en la predicción de los niveles de fósforo.")
+            
+            if coef < 0:
+                print(f"Al aumentar una unidad a {name}, se disminuirán los niveles de fósforo en {abs(coef):.4f} mg/L.")
+            elif coef > 0:
+                print(f"Al aumentar una unidad a {name}, se aumentarán los niveles de fósforo en {coef:.4f} mg/L.")
+            else:
+                print(f"La variable {name} no tiene un impacto en los niveles de fósforo.")
 
 def main():
     introduction()
