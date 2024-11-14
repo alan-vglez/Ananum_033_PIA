@@ -1,7 +1,5 @@
 # PIA Análisis Numérico
-Integrated Learning Project for Numerical Analysis
-
-This application performs a multiple linear regression analysis on lake water quality data to study the relationship between phosphorus levels and various environmental factors.
+Integrated Learning Project for Numerical Analysis: This application performs a multiple linear regression analysis on lake water quality data to study the relationship between phosphorus levels and various environmental factors.
 
 ## Features
 - **Automatic Regression**: Run a regression with predefined variables.
